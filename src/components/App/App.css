@@ -21,6 +21,17 @@ h1 .highlight {
   color: #6c41ec;
 }
 
+h1 a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1 a:hover,
+h1 a:focus {
+  opacity: .8;
+}
+
 h2 {
   font-family: 'Poppins', sans-serif;
   font-size: 1.55rem;

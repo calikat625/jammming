@@ -1,10 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
+import { CookiesProvider } from 'react-cookie';
+import { Provider as AlertProvider } from 'react-alert'
+import AlertTemplate from 'react-alert-template-basic'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const options = {
+  position: 'top center',
+  timeout: 5000,
+  offset: '100px',
+  transition: 'scale'
+}
+
+ReactDOM.render(
+  <AlertProvider template={AlertTemplate} {...options}>
+    <CookiesProvider>
+      <App />
+    </CookiesProvider>
+  </AlertProvider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
